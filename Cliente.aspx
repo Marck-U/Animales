@@ -1,0 +1,146 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="Cliente.aspx.cs" Inherits="Cliente" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="Server">
+    <asp:scriptmanager runat="server"></asp:scriptmanager>
+    <div class="container">
+        <div class="container" style="margin-top: 10%;">
+            <div class="row ">
+                <div class="input-field col s12 m12 l4">
+                    <asp:textbox runat="Server" id="txt_rut" name="rut" type="number" class="validate" length="9"></asp:textbox>
+                    <label for="account_circle">Rut</label>
+                </div>
+                <div class="input-field col s12 m12 l4">
+                    <asp:textbox runat="Server" id="txt_nombre" name="nombre" type="text" class="validate" length="55"></asp:textbox>
+                    <label for="account_circle">nombre</label>
+                </div>
+                <div class="input-field col s12 m12 l4">
+                    <asp:textbox runat="Server" id="txt_apellido" name="apellido" type="text" class="validate" length="55"></asp:textbox>
+                    <label for="account_circle">Apellido</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l4">
+                    <asp:textbox runat="Server" id="txt_usuario" name="usuario" type="text" class="validate"></asp:textbox>
+                    <label for="account_circle">Usuario</label>
+                </div>
+                <div class="input-field col s12 m12 l4">
+                    <asp:textbox runat="Server" id="txt_pass"  name="password" type="password" class="validate"></asp:textbox>
+                    <label for="account_circle">pass</label>
+                </div>
+                <div class="input-field col s12 m12 l4">
+                    <asp:textbox runat="Server" id="txt_telefono" name="telefono" type="tel" class="validate" length="12"></asp:textbox>
+                    <label for="icon_telephone">Telefono</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <asp:textbox runat="Server" id="txt_correo" name="correo" type="email" class="validate"></asp:textbox>
+                    <label for="account_circle">Correo</label>
+                </div>
+            </div>
+            <asp:updatepanel id="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <p>
+                        <p>
+                            <label for="account_circle">Region</label>
+                            <asp:DropDownList ID="DropDownList6" runat="server" OnSelectedIndexChanged="DropDownList6_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                        </p>
+                        <label for="account_circle">Provincia</label>
+                        <asp:DropDownList ID="DropDownList5" runat="server" OnSelectedIndexChanged="DropDownList5_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                    </p>
+                    <p>
+                        <label for="account_circle">Comuna</label>
+                        <asp:DropDownList ID="DropDownList4" runat="server" >
+                        </asp:DropDownList>
+                    </p>
+                </ContentTemplate>
+            </asp:updatepanel>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <asp:textbox runat="Server" id="txt_direc" name="direccion" type="text" class="validate"></asp:textbox>
+                    <label for="account_circle">Direccion</label>
+                </div>
+            </div>
+            <p>
+                <label for="account_circle">Estado</label>
+                <asp:dropdownlist id="DropDownList7" runat="server"></asp:dropdownlist>
+            </p>
+            <div class="row">
+                <div class="input-submit">
+                    <asp:updatepanel id="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:Button runat="server" type="submit" ID="btn_insert" class="btn waves-effect waves-light deep-orange" name="action" Style="right: 10%" OnClick="btn_insert_Click1" Text="Registro"/> <br/>
+                            <asp:Label  ID="lbl_mensaje" runat="server" Text="" cssClass="orange-text"></asp:Label>
+                        </ContentTemplate>
+                    </asp:updatepanel>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-left: 0%; width: 20%;">
+        <asp:gridview cssclass="bordered responsive-table" runat="server" autogeneratecolumns="False" datakeynames="Run,id_Estado,comuna_id" datasourceid="SqlDataSource1" autogenerateeditbutton="True" autogeneratedeletebutton="True" id="UsuarioGrid" AllowPaging="True" PageSize="5" OnSelectedIndexChanged="UsuarioGrid_SelectedIndexChanged">
+            <Columns >
+                <asp:BoundField DataField="Run" HeaderText="Run" ReadOnly="True" SortExpression="Run" />
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
+                <asp:BoundField DataField="Usuario" HeaderText="Usuario" SortExpression="Usuario" />
+                <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
+                <asp:BoundField DataField="CorreoE" HeaderText="CorreoE" SortExpression="CorreoE" />
+                <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
+                <asp:BoundField DataField="Clave" HeaderText="Clave" SortExpression="Clave" />
+                <asp:BoundField DataField="Estado" Visible="false"  HeaderText="Estado"   SortExpression="Estado" />
+                <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" />
+                <asp:BoundField DataField="comuna_nombre" Visible="false"  HeaderText="comuna_nombre" SortExpression="comuna_nombre" />
+                <asp:BoundField DataField="id_Estado" Visible="false"  HeaderText="id_Estado" InsertVisible="False" ReadOnly="True" SortExpression="id_Estado" />
+                <asp:BoundField DataField="comuna_id" Visible="false" HeaderText="comuna_id" InsertVisible="False" ReadOnly="True" SortExpression="comuna_id" />
+            <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2"
+                         DataTextField="Estado" DataValueField="id_Estado"
+                             SelectedValue='<%# Bind("id_Estado")%>'> 
+                        </asp:DropDownList>                     
+                    </EditItemTemplate>
+                <ItemTemplate>
+                <asp:Label ID="Label1" runat="server" Text='<%# Bind("Estado")%>'></asp:Label>
+                </ItemTemplate> 
+            </asp:TemplateField>
+                <asp:TemplateField HeaderText="Comuna" SortExpression="Comuna">
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource3"
+                         DataTextField="comuna_nombre" DataValueField="comuna_id"
+                             SelectedValue='<%# Bind("comuna_id")%>'> 
+                        </asp:DropDownList>                     
+                    </EditItemTemplate>
+                <ItemTemplate>
+                <asp:Label ID="Label2" runat="server" Text='<%# Bind("comuna_nombre")%>'></asp:Label>
+                </ItemTemplate> 
+            </asp:TemplateField>
+            </Columns>
+            <PagerSettings FirstPageText="Primera Pagina" LastPageText="Ultima pagina" Mode="NumericFirstLast" PageButtonCount="5" />
+        </asp:gridview>
+        <asp:sqldatasource id="SqlDataSource1" runat="server" connectionstring="<%$ ConnectionStrings:bd_AdopcionAnimalConnectionString %>" selectcommand="ClienteEstado" selectcommandtype="StoredProcedure" deletecommand="DELETE FROM Cliente WHERE Run = @Run" updatecommand="UPDATE Cliente SET Nombre = @nombre, Usuario = @usuario, Apellido = @apellido, Telefono = @Telefono, CorreoE = @correoE, Direccion = @Direccion, comuna_id = @comuna, Clave = @clave, id_Estado = @id_Estado where Run = @Run">
+            <DeleteParameters>
+                <asp:Parameter Name="Run" />
+            </DeleteParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="nombre" />
+                <asp:Parameter Name="usuario" />
+                <asp:Parameter Name="apellido" />
+                <asp:Parameter Name="Telefono" />
+                <asp:Parameter Name="correoE" />
+                <asp:Parameter Name="Direccion" />
+                <asp:Parameter Name="comuna" />
+                <asp:Parameter Name="id_comuna" />
+                <asp:Parameter Name="id_Estado" />
+                <asp:Parameter Name="Run" />
+            </UpdateParameters>
+        </asp:sqldatasource>
+        <asp:sqldatasource id="SqlDataSource2" runat="server" connectionstring="<%$ ConnectionStrings:bd_AdopcionAnimalConnectionString %>" selectcommand="SELECT * FROM [Estado]"></asp:sqldatasource>
+        <asp:sqldatasource id="SqlDataSource3" runat="server" connectionstring="<%$ ConnectionStrings:bd_AdopcionAnimalConnectionString %>" selectcommand="SELECT [comuna_id], [comuna_nombre] FROM [comunas]"></asp:sqldatasource>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+</asp:Content>
+

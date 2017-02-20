@@ -1,0 +1,18 @@
+html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+h1 {
+    color: #004d40;
+}
+
+label.error,
+label span.error {
+    color: #e74c3c;
+    margin: 5px 0 0 0;
+    font-weight: 400;
+}
+
+.validate.error {
+    border-color: #e74c3c !important;
+}

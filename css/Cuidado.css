@@ -1,0 +1,44 @@
+html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+      display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+}
+
+h1 {
+    color: #ff5722;
+}
+
+h3 {
+    color: #fff;
+}
+
+.contenedor {
+   display:flex;
+    width: 100%;
+    height: 237px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.container1
+{
+    height: 300px;
+    width: 70%;
+    margin: 20px auto auto;
+    border:1px solid black;
+ }
+
+main{
+     flex: 1 0 auto;
+}
+
+

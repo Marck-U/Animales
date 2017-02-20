@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/materialize.css" rel="stylesheet" />
+    <link href="js/sweetalert/sweet-alert.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="css/estiloInicio.css" rel="stylesheet" />
+    <nav class="deep-orange" role="navigation">
+        <div class=" fixed nav-wrapper container ">
+            <ul class="right hide-on-med-and-down">
+                <li><a href="SesionAdmin.aspx">Inicio</a></li>
+                <li><a href="CerrarSesion.aspx">Cerrar Sesion</a></li>
+            </ul>
+            <a href="SesionAdmin.aspx" class="brand-logo center"><i class="material-icons">home</i>home</a>
+            <ul class="center hide-on-med-and-down">
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li>
+                    <div class="userView">
+                        <img class="background" src="image/slider1.jpg" />
+                        <a>
+                            <img class="circle" src="image/slider1.jpg" /></a>
+                        <a><span class="white-text name">Portal Animal</span></a>
+                        <a><span class="white-text email">marcoazuabiobio@gmail.com</span></a>
+                    </div>
+                </li>
+                <li><a href="SesionAdmin.aspx">Inicio</a></li>
+                <li><a href="CerraSesion.aspx">Cerrar Sesion</a></li>
+            </ul>
+            <a href="Registro.aspx" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <main>
+        <form id="form1" runat="server">
+            <div class="row s3">
+                <div class="col s3">
+                <div class="collection">
+                    <ul id="slide-out" class=" collection-header">
+                        <p class="center">Mantenedores</p>
+                        <li>
+                    <div class="divider"></div>
+               </li>
+               </ul>
+                    <a class="collection-item" href="Mascota.aspx">Mascotas</a>
+                    <a class="collection-item" href="Raza.aspx">Raza</a>
+                    <a class="collection-item" href="Genero.aspx">Genero</a>
+                    <a class="collection-item" href="Vacunas.aspx">Tipo Vacunas</a>
+                    <a class="collection-item" href="Veterinario.aspx">Visita Veterinario</a>
+                    <a class="collection-item" href="Tipo.aspx">Tipo Animal</a>
+                    <a class="collection-item" href="Estado.aspx">Estado Animal</a>
+                    <a class="collection-item" href="EstadoUsuario.aspx">Estados Usuario</a>
+                    <a class="collection-item" href="Usuario.aspx">Usuario</a>
+                    <a class="collection-item" href="Cliente.aspx">Cliente</a>
+                    <a class="collection-item" href="Comuna.aspx">Comuna</a>
+                    <a class="collection-item" href="Provincia.aspx">Provincia</a>
+                    <a class="collection-item" href="Region.aspx">Region</a>
+                     <ul id="slide-out" class=" collection-header">
+                        <p class="center">Modulo</p>
+                        <li>
+                    <div class="divider"></div>
+               </li>
+               <ul>
+                <li>
+                    <a class="collection-item" href="ModuloAdopcion.aspx">Detalle Adopcion</a>
+                </li>
+            </ul>
+               </ul>
+                    <ul id="slide-out" class=" collection-header">
+                        <p class="center">Reportes</p>
+                        <li>
+                    <div class="divider"></div>
+               </li>
+               <ul>
+                <li>
+                    <a class="collection-item" href="ReporteAdopcion.aspx">Reporte por fecha de adopcion</a>
+                    <a class="collection-item" href="ReporteAdopcion.aspx">Reporte Adopcion por especie y raza</a>
+                    <a class="collection-item" href="ReporteAdopcion.aspx">Reporte Usuarios por cantidad</a>
+                </li>
+            </ul>
+               </ul>
+                </div>
+                </div>
+            <div class="col s9">
+                  <asp:ContentPlaceHolder ID="Contenido" runat="server">
+                  </asp:ContentPlaceHolder>  
+                </div>
+            </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    </main>
+    <footer class="page-footer teal deep-orange">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5 class="white-text">Adopción Animal</h5>
+                    <p class="grey-text text-lighten-4 ">Portal Creado para promover el sistema de adopción Animal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 Copyright Marco Azúa Ulloa
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/sweetalert/sweet-alert.min.js"></script>
+    <script src="js/sweetalert/sweet-alert.js"></script>
+    <script src="jsIndex/init.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

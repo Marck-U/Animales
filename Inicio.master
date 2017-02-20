@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Inicio.master.cs" Inherits="Inicio" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/materialize.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="js/sweetalert-master/dist/sweetalert.css" rel="stylesheet" />
+    <link href="css/estiloInicio.css" rel="stylesheet" />
+    <%--   <link href="css/Cuidado.css" rel="stylesheet" />--%>
+    <!-- Inicio del navbar-->
+    <div id="position">
+        <div id="caja">
+            <ul id="slide-out" class="side-nav">
+                <li>
+                    <div class="userView">
+                        <img class="background" src="image/slider1.jpg">
+                        <a>
+                            <img class="circle" src="image/slider1.jpg"></a>
+                        <a><span class="white-text name">Comunidad Animal</span></a>
+                        <a><span class="white-text email">marcoazuabiobio@gmail.com</span></a>
+                    </div>
+                </li>
+                <li><a><i class="material-icons">cloud</i>Comunidad Animal</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Navegacion</a></li>
+                <li><a class="waves-effect" href="Inicio.aspx">Inicio</a></li>
+                <li><a class="waves-effect" href="adopcion.aspx">Adopcion</a></li>
+                <li><a class="waves-effect" href="Salud.aspx">Salud</a></li>
+                <li><a class="waves-effect" href="Cuidados.aspx">Cuidados</a></li>
+                <li><a class="waves-effect" href="Mapa.aspx">Mapa Veterinarias</a></li>
+                <li><a class="waves-effect" href="CerrarSesion.aspx">Cierra Sesion</a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="#" data-activates="slide-out" class="btn button-collapse  deep-orange" style="position: fixed; top: 0;"><i class="material-icons">menu</i></a>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <main>
+         <form id="form" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+          <div >
+                 <div>
+                     </div>
+          </div>
+                  </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    </main>
+    <!-- Inicio del footer-->
+    <footer class="page-footer teal deep-orange">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5 class="white-text">Adopción Animal</h5>
+                    <p class="grey-text text-lighten-4 ">Portal Creado para promover el sistema de adopción Animal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 Copyright Marco Azúa Ulloa
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/sweetalert-master/dist/sweetalert.min.js"></script>
+    <script src="js/funcionesRegistro.js"></script>
+    <script src="js/Inicio.js"></script>
+    <script src="js/menu.js"></script>
+<%--    <script src="js/src/Geo.js"></script>--%>
+</body>
+</html>

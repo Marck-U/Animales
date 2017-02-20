@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- Link, exportaciones de css o font-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/materialize.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="cssIndex/style.css" rel="stylesheet" />
+    <link href="js/sweetalert/sweet-alert.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Incio del navegador-->
+    <nav class="white" role="navigation">
+        <div class=" fixed nav-wrapper container ">
+            <ul class="right hide-on-med-and-down">
+                <li><a href="InicioSesion.aspx">Inicio De sesion</a></li>
+            </ul>
+            <a href="index.aspx" class="brand-logo center"><i class="material-icons">pets</i>home</a>
+                <ul class="center hide-on-med-and-down">
+                </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="Registro.aspx">Registro</a></li>
+                 <li><a href="InicioSesion.aspx">Inicio Sesion</a></li>
+            </ul>
+            <a href="Registro.aspx" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- Empiza el main, sirve para que el footer no se suba-->
+    <main>
+        <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    </main>
+    <!-- Termino del main e inicio del footer-->
+    <footer class="page-footer teal deep-orange">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5 class="white-text">Adopción Animal</h5>
+                    <p class="grey-text text-lighten-4 ">Portal Creado para promover el sistema de adopción Animal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 Copyright Marco Azúa Ulloa
+            </div>
+        </div>
+    </footer>
+    <!-- Linkeo de jquery y js-->
+     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/sweetalert/sweet-alert.min.js"></script>
+    <script src="js/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="jsIndex/init.js"></script>
+    <script src="js/funcionesRegistro.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>
